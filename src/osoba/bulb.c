@@ -28,8 +28,9 @@
  */
 
 #include <stdio.h>
-extern int a;
-extern int dodaj(int a, int b);
+#include "zmienne.h"
+//extern int a;
+//extern int dodaj(int a, int b);
 int main(void)
 {
     printf("Dzien dobry!\n");
