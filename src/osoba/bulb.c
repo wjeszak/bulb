@@ -22,17 +22,19 @@
  *  Mozna takze wyrzucic zapis extern int a do pliku naglowkowego zmienne.h
  *  i go dolaczyc do bulb.c
  *  
- *  Funkcje sa DOMYSLNIE widoczne poza jednostke kompilacji w ktorej sa
- *  zdefiniowane, dopoki nie dodamy przed definicja static.
+ *  Funkcje nalezy jawnie deklarowac jako extern, inaczej przy -Wall
+ *  jest implicit....
+ *  Jesli przy definicji dodamy static to extern nie bedzie dzialac
  */
 
 #include <stdio.h>
 extern int a;
+extern int dodaj(int a, int b);
 int main(void)
 {
     printf("Dzien dobry!\n");
     printf("Zmienna a = %d\n", a);
-//    int wynik = dodaj(3, 5);
-//    printf("Wynik funkcji dodaj(): %d\n", wynik);
+    int wynik = dodaj(3, 5);
+    printf("Wynik funkcji dodaj(): %d\n", wynik);
     return 0;
 }
